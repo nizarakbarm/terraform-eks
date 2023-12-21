@@ -17,6 +17,6 @@ resource "aws_subnet" "public" {
     availability_zone = element(concat(var.azs,count.index))
     
     tags = {
-      "name" = try(format("${var.vpc_name}-public-%s",element(var.asz,count.index)))
+      "name" = try(format("${var.vpc_name}-public-%s",element(var.azs,count.index)))
     }
 }
