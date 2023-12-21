@@ -1,6 +1,7 @@
 variable "vpc_name" {
     description = "vpc name"
     type = string
+    default = "vpc-main"
 }
 variable "public_subnets" {
     description = "list public subnets"
