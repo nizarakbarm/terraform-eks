@@ -11,6 +11,14 @@ on:
             - 'release/**'
             - 'hotfix/**'
             - 'support/**'
+    push:
+        branches:
+            - develop
+            - 'feature/**'
+            - 'bugfix/**'
+            - 'release/**'
+            - 'hotfix/**'
+            - 'support/**'
 
 env:
     TF_CLOUD_ORGANIZATION: "${{ secrets.TF_CLOUD_ORGANIZATION }}"
