@@ -13,8 +13,8 @@ resource "aws_vpc" "vpc_eks" {
 resource "aws_subnet" "public" {
     count = 1
     vpc_id = aws_vpc.vpc_eks.id
-    cidr_block = element(concat(var.public_subnets,count.index))
-    availability_zone = element(concat(var.azs,count.index))
+    cidr_block = element(concat(var.public_subnets),count.index)
+    availability_zone = element(concat(var.azs),count.index)
     
     tags = {
       "name" = try(format("${var.vpc_name}-public-%s",element(var.azs,count.index)))
